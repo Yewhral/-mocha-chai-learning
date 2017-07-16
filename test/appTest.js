@@ -1,4 +1,4 @@
-const assert = require('chai').assert;;
+const assert = require('chai').assert;
 const app = require("../app");
 
 const sayHelloResult = app.sayHello();
