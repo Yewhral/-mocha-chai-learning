@@ -1,27 +1,26 @@
 const assert = require('chai').assert;
-const sayHello = require('../app').sayHello;
-const addNumbers = require('../app').addNumbers;
-//const app = require("../app");
+//const sayHello = require('../app').sayHello;
+//const addNumbers = require('../app').addNumbers;
+const app = require("../app");
+
+const sayHelloResult = app.sayHello();
+const addNumbersResult = app.addNumbers(5,10);
 
 describe('App',function(){
     it('sayHello should say hello', () => {
-        let result = sayHello();
-        assert.equal(result,'hello');
+        assert.equal(sayHelloResult,'hello');
     });
 
     it('sayHello should return a string', () => {
-        let result = sayHello();
-        assert.typeOf(result, 'string');
+        assert.typeOf(sayHelloResult, 'string');
     });
 
     it('addNumbers should return value higher than 10', () => {
-        let result = addNumbers(10,10);
-        assert.isAbove(result, 10);
+        assert.isAbove(addNumbersResult, 10);
     });
 
     it('addNumbers should return a number', () => {
-        let result = addNumbers(0,10);
-        assert.typeOf(result, 'number');
+        assert.typeOf(addNumbersResult, 'number');
     });
 
 });
