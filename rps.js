@@ -1,20 +1,21 @@
-module.exports = {
-    rockPaperScizzors: (playerA, playerB) => {
+module.exports =  function (playerA, playerB) {
         const winning = {
-            rock: 'scizzors',
+            rock: 'scissors',
             paper: 'rock',
-            scizzors: 'paper'
+            scissors: 'paper'
         };
 
         if (playerA === winning[playerB]) {
-            return playerB;
+            return 'playerB';
         }
 
         if (playerB === winning[playerA]) {
-            return playerA;
+            return 'playerA';
         }
 
-        return 'tie';
+        if (playerA === playerB) {
+            return 'tie';
+        }
+        return 'not defined';
 
-    }
-};
+    };
